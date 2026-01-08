@@ -1,0 +1,70 @@
+
+<input id="inputbox" onkeyup="update()"">
+<button>Button</button>
+<h1 id="result"></h1>
+
+<script>
+    var inputbox=document.getElementById("inputbox")
+    var result=document.getElementById("result")
+
+    function update(){
+        result.textContent=inputbox.value
+    }
+</script>
+
+<!---
+<button onclick="update()">click</button>
+<div id="result"></div>  
+
+<script>
+    var div=document.getElementById("result")
+
+    function update()
+    {
+
+        var listitem=document.createElement("h1") 
+        listitem.textContent="Hello" 
+        div.append(listitem)
+    }
+</script>
+
+
+
+<button id="btn" onclick="update()">change color</button>
+
+<script>
+    var btn=document.getElementById("btn")
+
+    function update(){
+        btn.style.backgroundColor="red"
+    }
+</script>
+
+
+<h1 id="result">Name</h1>
+<button onclick="update(event)">Rahuman</button>
+<button onclick="update(event)">Venkatesh</button>
+<button onclick="update(event)">Yuvaraj</button>
+<script>
+
+    var h1=document.getElementById("result")
+    function update(event){
+        h1.textContent=event.target.textContent
+    }
+
+</script>
+
+<h1 onclick="deleteitem(event)">One</h1>
+<h1 onclick="deleteitem(event)">Two</h1>
+<h1 onclick="deleteitem(event)">Three</h1>
+<h1 onclick="deleteitem(event)">Four</h1>
+<h1 onclick="deleteitem(event)">Five</h1>
+<h1 onclick="deleteitem(event)">Six</h1>
+
+<script>
+
+    function deleteitem(event){
+        event.target.remove()
+        
+    }
+</script>
