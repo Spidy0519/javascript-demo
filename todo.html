@@ -1,0 +1,82 @@
+<input id="input">
+<button onclick="add()">Add</button>
+<ul id="list-container">
+    <li>hello
+        <button onclick="deleteItem(event)">Delete</button>
+    </li>
+</ul>
+
+<style>
+    *{
+        box-sizing: border-box;
+        font-family:Arial, Helvetica, sans-serif sans-serif;
+    }
+
+    body{
+        background-color: antiquewhite;
+        padding: 30px
+    }
+
+    #input{
+        padding: 8px 10px;
+        width: 220px;
+        border: 5px solid #aaa;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    button{
+        padding: 8px 12px;
+        margin-left: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    button:hover{
+        opacity: 0.85;
+    }
+
+    ul{
+        margin-top: 20px;
+        padding: 0;
+        width: 300px;
+    }
+
+    li{
+        list-style: none;
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    li button{
+        background-color: #e74c3c;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+</style>
+
+
+<script>
+    var ul=document.getElementById("list-container")
+    var input=document.getElementById("input")
+
+    function add(){
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value + "<button onclick='deleteItem(event)'>Delete</buttton>"
+        ul.append(listitem)
+    }
+
+    function deleteItem(event){
+        event.target.parentElement.remove()
+    }
+</script>
